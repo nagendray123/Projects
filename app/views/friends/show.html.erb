@@ -1,24 +1,43 @@
 <div class="mt-4 p-5 bg-primary text-white rounded text-center">
-  <h1 class="display-4">
+  
+  <br/>
+
+  <div class="card-shadow mb-3">
+  <div class="card-body">
+  <div class="row">
+  <div class="col-lg-5">    
+    <% if @friend.profile_image.attached?%>
+      <%= image_tag @friend.profile_image %>
+    <% end %>
+  </div>
+    <div class="col-lg-7">
+    <h1 class="display-7">
+
     <%= @friend.first_name %>
     <%= @friend.last_name %>
   </h1>
   <br/>
-  <p class="lead">
+  <p class="leaded">
     <%= @friend.email %> |
     <%= @friend.phone %> |
     <%= @friend.address %>
   </p>
-  <br/>
+</div>
+
+
   <p class="lead">
 
       <%= link_to "Edit", edit_friend_path(@friend), class:"btn btn-dark" %> |
       <%= link_to "Back", friends_path, class: "btn btn-light" %>
   </p>
+  </div>
+  </div>
 </div>
+</div>
+</div>
+  <br />
 
-
-
+  
 
 
 

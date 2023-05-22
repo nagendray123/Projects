@@ -13,39 +13,42 @@
   <% end %>
 
   <div class="field form-group">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name, class:"form-control", placeholder:"Enter your fisrt_name..........."%>
+     <%= form.label :first_name%>
+    <%= form.text_field :first_name, class:"form-control", placeholder: "First_name.........." %>
+    <br>
   </div>
 
-  <div class="field form-group">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name, class:"form-control", placeholder:"Enter your last_name..........." %>
+  <div>
+     <%= form.label :Last_name%>
+    <%= form.text_field :last_name,  class:"form-control", placeholder: "Last_name.........." %>
+ <br/>
   </div>
 
-  <div class="field form-group">
-    <%= form.label :email%>
-    <%= form.text_field :email, class:"form-control", placeholder:"Enter your valid email.id..........." %>
+  <div>
+     <%= form.label :Email%>
+      <%= form.text_field :email,  class:"form-control",  placeholder: "Email.........." %>
+      <br/>
   </div>
 
-  <div class="field form-group">
-    <%= form.label :phone %>
-    <%= form.text_field :phone, class:"form-control", placeholder:"Enter your phone number..........." %>
+
+  <div>
+     <%= form.label :Phone%>
+      <%= form.text_field :phone ,  class:"form-control", placeholder: "Phone.........." %>
+      <br/>
   </div>
 
-  <div class="field form-group">
-    <%= form.label :address%>
-    <%= form.text_field :address, class:"form-control", placeholder:"Enter your address..........." %>
+  <div>
+     <%= form.label :Address%>
+      <%= form.text_field :address ,  class:"form-control", placeholder: "Address.........." %>
+      <br/>
   </div>
 
-  <div class="field form-group">
-    <%#= form.label :user_id%>
-    <%= form.number_field :user_id, id: :friend_user_id, class:"form-control", value: current_user.id, type: :hidden %>
-  </div>
-
-  <%#= current_user.id%>
-
-   <br/>
-  <div class="actions">
-    <%= form.submit%>
+  
+   <div class=" field form-group">
+        
+       <%= form.file_field :profile_image %>
+     </div>
+  <div style="text-align:center;">
+    <%= form.submit  class:"btn btn-dark" %>
   </div>
 <% end %>

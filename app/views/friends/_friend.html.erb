@@ -1,27 +1,14 @@
-<div id="<%= dom_id friend %>">
-  <p>
-    <strong>First name:</strong>
-    <%= friend.first_name %>
-  </p>
+     <%= stylesheet_link_tag "custom", "data-turbo-track": "reload" %>
 
-  <p>
-    <strong>Last name:</strong>
-    <%= friend.last_name %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
-    <%= friend.email %>
-  </p>
-
-  <p>
-    <strong>Phone:</strong>
-    <%= friend.phone %>
-  </p>
-
-  <p>
-    <strong>Address:</strong>
-    <%= friend.address %>
-  </p>
-
+<div class="m-4 p-5">
+  
+    <h1><%= @friend.first_name %> <%= @friend.last_name %></h1>
+    <p> <%= @friend.email %> |
+        <%= @friend.phone %> |
+        <br><br>
+    <%= link_to "Edit", edit_friend_path(@friend), class:"btn btn-outline-dark" %> |
+    <%= link_to "Back", friends_path, class:"btn btn-outline-dark" %> |
+    <%= link_to "Destroy", @friend, method: :delete, class:"btn  btn-outline-dark" %>
+    <br><br><br>
+  
 </div>

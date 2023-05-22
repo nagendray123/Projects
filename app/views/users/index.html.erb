@@ -1,0 +1,12 @@
+<div class="bg-danger text-white rounded">     
+  <div class="card-shadow mb-3">
+  <div class="card-body">
+     <% @users.each do |user| %>
+    <%= user.email %>
+    <%= user.roles.pluck(:name) %>
+    <%= link_to 'Edit role', edit_user_path(user) %><br />
+    <%#= user.friends.pluck(:id) %>
+      <% end %>
+</div>
+</div>
+</div>

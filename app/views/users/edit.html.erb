@@ -1,0 +1,12 @@
+<div class="bg-success text-black rounded">     
+  <div class="card-shadow mb-3">
+  <div class="card-body">
+    <%= form_with(model: @user) do |form| %>
+        <%= form.collection_check_boxes :role_ids, Role.all, :id, :name%>
+        <%= @user.errors[:roles] %>
+        <%= form.button :submit%>
+    <% end %>
+     
+</div>
+</div>
+</div>

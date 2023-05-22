@@ -1,8 +1,21 @@
-<div style="text-align: center;">
- <% if user_signed_in? %>
+
+   <div style="text-align:center;">
+   <% if user_signed_in? %>
 
  <h1>Friends List</h1>
     <br/>
+
+    <%= search_form_for @q, url: :friends do |f| %>
+
+    <div class="form-group">
+      <%= f.label :first_name_cont %>
+      <%= f.search_field :first_name_cont %>
+   
+    <%= f.submit 'Search', class:"btn btn-primary" %>
+  </div>
+    <% end %>
+    <br>
+
 
 <table class="table table-striped table-bordered table-hover">
   <thead class="bg-info">
@@ -11,8 +24,8 @@
       <th>Email</th>
       <th>Phone</th>
       <th>Address</th>
-      <th>User Id</th>
-      <th colspan="3"></th>
+      
+      <th colspan="3">Actions</th>
     </tr>
   </thead>
 
@@ -23,13 +36,13 @@
     <tr>
       <td>
         <%= link_to friend.first_name + ' ' + friend.last_name, friend %>
-        <%#= friend.last_name %>
+    
       </td>
       <td><%= friend.email %></td>
       <td><%= friend.phone %></td>
       <td><%= friend.address %></td>
-      <td><%= friend.user_id %></td>
-
+      
+  
       <th><%= link_to 'Show', friend, class:"btn btn-dark" %></th>
       <th><%= link_to 'Edit', edit_friend_path(friend),class:"btn btn-dark" %></th>
 
@@ -40,11 +53,15 @@
   </tbody>
 </table>
 
+<%= paginate @friends %>
+ 
+
 <%= link_to "Add Friend", new_friend_path, class: "btn btn-primary"%>
 
 <% else %>
-    <h1>Home....</h1>
+    <h1>Please Sign-up/Sign-in Your Account</h1>
 
 <% end %>
 
 </div>
+<br />
