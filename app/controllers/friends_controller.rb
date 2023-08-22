@@ -38,7 +38,7 @@ class FriendsController < ApplicationController
       if @friend.save
            # current_user.add_role :creator, @friend
 
-        SendingEmailJob.set(wait: 5.seconds).perform_later(@friend)
+        SendingEmailJob.set(wait: 10.seconds).perform_later(@friend)
 
         format.html { redirect_to friend_url(@friend), notice: "Friend was successfully created." }
         format.json { render :show, status: :created, location: @friend }
@@ -54,7 +54,7 @@ class FriendsController < ApplicationController
     respond_to do |format|
       if @friend.update(friend_params)
         # current_user.add_role :editor, @friend
-        SendingEmailJob.set(wait: 5.seconds).perform_later(@friend)
+        SendingEmailJob.set(wait: 10.seconds).perform_later(@friend)
 
         format.html { redirect_to friend_url(@friend), notice: "Friend was successfully updated." }
         format.json { render :show, status: :ok, location: @friend }
