@@ -3,5 +3,26 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+  # Friend.create([{ name: "Star Wars", brand: "abc", price: "200$" },
+  # 	              { name: "Name Wars", brand: "def", price: "300$" },
+  # 	              { name: "Car Wars",  brand: "ghi", price: "400$" },
+  # 	              { name: "Sher Wars", brand: "jkl", price: "500$" },
+  # 	              { name: "Kutta Wars", brand: "mno", price: "600$" },
+  # 	              { name: "Billi Wars", brand: "pqr", price: "700$" },
+  # 	              { name: "Ghoda Wars", brand: "stu", price: "800$" }
+  #  ])
+
+
+
+
+#   50.times do
+#   Friend.create!(
+#     first_name: "Friend #{rand(1..50)}",
+#     last_name: ["English", "Spanish", "French", "German", "Italian"].sample,
+#     email: ["English@.com", "Spanish@.com", "French@.com", "German@.com", "Italian@.com"].sample,
+#     phone: "#{rand(1..3)}",
+#     address: ["Indore", "Bhopal", "Jharkhand", "Garhwa", "Bardiha"].sample,
+#      user_id: 9
+#   )
+# end
+ 
